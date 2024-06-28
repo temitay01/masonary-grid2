@@ -1,0 +1,85 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: rgb(235, 222, 222);
+}
+.Container {
+  margin: 20px auto;
+  columns: 4;
+  column-gap: 5px;
+  width: 80%;
+}
+.img-container {
+  margin-bottom: 10px;
+  break-inside: avoid;
+  margin-left: 4px;
+  margin-right: 4px;
+  position: relative;
+}
+.Container img {
+  max-width: 100%;
+  border-radius: 15px;
+  object-fit: cover;
+  display: block;
+}
+.pop-up {
+  position: absolute;
+  top: 45%;
+  left: 35%;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: larger;
+  color: rgb(1, 11, 19);
+  opacity: 0;
+  background-color:  rgb(235, 222, 222);
+  border-radius: 7px;
+  width: 70px;
+  border: rgb(4, 20, 4);
+  text-align: center;
+}
+
+.Container img:hover ~ .pop-up {
+  opacity: 1;
+  transition: 0.5s;
+}
+
+.Container img:hover {
+  filter: brightness(50%);
+  transition: 0.5s;
+}
+.pop-up:hover {
+  background-color: rgb(188, 178, 178);
+  opacity: 1;
+  cursor: pointer;
+  transform: scale(1.05);
+}
+.pop-up:hover ~ .Container img {
+  filter: brightness(50%);
+  width: 10px;
+}
+
+@media screen and (max-width: 768px) {
+  .Container {
+    columns: 2;
+    column-gap: 6px;
+  }
+
+  .img-container {
+    margin-left: 4px;
+    margin-right: 4px;
+    margin-bottom: 6px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .Container {
+    columns: 1;
+    column-gap: 4px;
+  }
+
+  .img-container {
+    margin-left: 4px;
+    margin-right: 4px;
+    margin-bottom: 4px;
+  }
+}
